@@ -9,6 +9,7 @@ license = "MIT"
 description = "Switch and edit Noctalia appearance profiles."
 icon = "palette"
 tags = ["theming", "wallpaper", "utility"]
+dependencies = []
 
 [[service]]
 id = "service"
