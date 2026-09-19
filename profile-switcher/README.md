@@ -16,6 +16,27 @@ A profile can define:
 
 Profiles are stored as simple TOML files and can be created and edited directly from Noctalia.
 
+## Plugin
+
+Plugin ID: `m4sc/profile-switcher`
+
+### Widget
+
+- `profile`
+
+### Panels
+
+- `panel`
+- `editor`
+
+### Shortcut
+
+- `profiles`
+
+### Service
+
+- `service`
+
 ## Features
 
 ### Appearance Profiles
@@ -264,14 +285,18 @@ The resulting directory should look similar to:
 ```text
 ~/.local/share/noctalia/plugins/profile-switcher/
 ├── plugin.toml
+├── README.md
+├── LICENSE
+├── thumbnail.webp
 ├── service.luau
 ├── scheduler.luau
 ├── profiles.luau
 ├── apply.luau
 ├── panel.luau
 ├── editor.luau
+├── widget.luau
+├── shortcut.luau
 ├── toml.luau
-├── thumbnail.webp
 └── translations/
     ├── en.json
     └── de.json
@@ -343,6 +368,8 @@ For example, with Umbriel:
 
 The plugin periodically evaluates profile schedules.
 
+### Automatic Profile
+
 Example work profile:
 
 ```toml
@@ -365,6 +392,8 @@ days = [1, 2, 3, 4, 5]
 
 Schedules crossing midnight are supported by the scheduler.
 
+### Manual Profile
+
 A manual profile can keep its schedule configuration while disabling automatic activation:
 
 ```toml
@@ -377,12 +406,23 @@ days = [1, 2, 3, 4, 5]
 
 This makes it easy to temporarily disable automation without deleting the configured times.
 
+Manual profiles can always be activated from the profile selector or through IPC.
+
 ## Project Structure
 
 ```text
 profile-switcher/
 ├── plugin.toml
 │   Plugin manifest and Noctalia entries
+│
+├── README.md
+│   Plugin documentation
+│
+├── LICENSE
+│   MIT license
+│
+├── thumbnail.webp
+│   Plugin preview image
 │
 ├── service.luau
 │   Background service, IPC and schedule handling
@@ -402,8 +442,18 @@ profile-switcher/
 ├── editor.luau
 │   Profile editor and wallpaper browser
 │
-└── toml.luau
-    TOML parsing
+├── widget.luau
+│   Noctalia widget integration
+│
+├── shortcut.luau
+│   Noctalia shortcut integration
+│
+├── toml.luau
+│   TOML parsing
+│
+└── translations/
+    ├── en.json
+    └── de.json
 ```
 
 ## Notes

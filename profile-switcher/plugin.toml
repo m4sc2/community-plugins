@@ -8,7 +8,7 @@ license = "MIT"
 
 description = "Switch and edit Noctalia appearance profiles."
 icon = "palette"
-tags = ["theming", "wallpaper", "profiles", "utility"]
+tags = ["theming", "wallpaper", "utility"]
 
 [[service]]
 id = "service"
@@ -31,7 +31,6 @@ height = 460
 
 placement = "floating"
 position = "center"
-layer = "overlay"
 
 keyboard_focus = "on_demand"
 dismiss_on_outside_click = true
@@ -46,7 +45,6 @@ height = 720
 
 placement = "floating"
 position = "center"
-layer = "overlay"
 
 keyboard_focus = "on_demand"
 dismiss_on_outside_click = false
